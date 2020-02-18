@@ -1,24 +1,70 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
+def exercise_1():
+    vector = np.zeros(10)
+    return vector
 
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('output.avi',fourcc,20.0,(640,480))
+def exercise_2():
+    vector = np.zeros(10)
+    vector[4] = 1.0
+    return vector
 
-while(cap.isOpened()):
-    ret, frame = cap.read()
-    if ret==True:
-        #frame = cv2.flip(frame,0)
-        frame = cv2.cvtColor(frame, cv2.COLOR_BAYER_BG2BGR)
-        out.write(frame)
+def exercise_3():
+    vector = np.arange(10, 50)
+    return vector
 
-        cv2.imshow('Video Frame',frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    else:
-        break
+def exercise_4():
+    vector = np.arange(1, 10)
+    vector = vector.reshape((3,3))
+    return vector
 
-cap.release()
-out.release()
-cv2.destroyAllWindows()
+def exercise_5():
+    vector = np.arange(1, 10)
+    vector = vector.reshape((3,3))
+    return vector
+
+def exercise_6():
+    vector = np.arange(1, 10)
+    vector = vector.reshape((3,3))
+    vector = np.flip(vector, 0)
+    return vector
+
+def exercise_7():
+    vector = np.identity(3)
+    return vector
+
+def exercise_8():
+    vector = np.random.random_sample((3,3))
+    return vector
+
+def exercise_9():
+    vector = np.random.seed(101)
+    vector = np.random.randint(0,100,10)
+    print(np.mean(vector))
+    return vector
+
+def exercise_10():
+    vector = np.ones((10, 10))
+    vector[1:9, 1:9] = 0.0
+    return vector
+
+def exercise_11():
+    vector = np.ones((5, 5))
+    vector[:] = np.arange(1,6)
+    return vector
+
+def exercise_12():
+    vector = np.random.seed(123)
+    vector = np.random.randint(0,100,9)
+    vector = vector.reshape((3,3))
+    vector = vector.astype(float)
+    return vector
+
+def exercise_15():
+    vector = np.random.random_sample((5,5))
+    
+    return vector
+
+arr = exercise_15()
+print(arr)
