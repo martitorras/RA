@@ -62,9 +62,24 @@ def exercise_12():
     return vector
 
 def exercise_15():
+    np.random.seed(123)
     vector = np.random.random_sample((5,5))
-    
+    index = (np.abs(vector-0.5)).argmin()
+    print(index)
     return vector
 
-arr = exercise_15()
+def exercise_16():
+    vector = np.random.randint(1,11,(3,3))
+    return len(vector[vector > 5])
+
+def exercise_17():
+    array = np.arange(0, 256)
+    vector = np.zeros(64,64)
+    cv2.imshow("will this work?", vector)
+    k = cv2.waitKey(0) 
+    if k == 27:
+        cv2.destroyAllWindows()
+    return vector
+
+arr = exercise_17()
 print(arr)
